@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <title>Print</title>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+.centerborder {
+	margin-top: 100px;
+    margin: auto;
+    width: 90%;
+    border: 3px solid black;
+    height:600px;
+    padding: 10px;
+}
+.centerborderNew {
+	margin-top: 100px;
+    margin: auto;
+    width: 90%;
+    border: 3px solid black;
+    height:330px;
+    padding: 10px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+    <div class="centerborder">
+    	<h4>Appointment Id: <span th:text="${appointment.getAppointmentId()}"></span></h4>
+    	<h4>Name: <span th:text="${appointment.getName()}"></span></h4>
+    	<h4>Appointment Date: <span th:text="${appointment.getAppointmentDate()}"></span></h4>
+    	<h4>Department: <span th:text="${appointment.getHosDepartment()}"></span></h4>
+    	<h4>Type: <span th:text="${appointment.getType()}"></span></h4>
+    	<h4>Problem: <span th:text="${appointment.getProblemSubject()}"></span></h4>
+    	<h4>Description: <span th:text="${appointment.getProblemDescription()}"></span></h4>
+    	<div class="centerborderNew">
+    		<h4>Prescriptions -> </h4>
+    	</div>
+    	
+    </div>
+    </div>
+     <script type="text/javascript">
+      window.onload = function() { window.print(); window.close();}
+ 	  </script>
+  </body>
+</html>

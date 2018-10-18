@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/icon" href="/images/favicon.ico"/>
+
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery.js"></script>    
+    <script type="text/javascript" src="/js/ajax/ajaxGet.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+ 
+<style>
+
+td,tr,th {
+	text-align: center;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+  <h2>Edit Your Appointments or Go <a th:href="@{/}">Home</a></h2>
+  <h3>Cancel Appointment or Print Receipt</h3>
+  <br/>            
+  <div class="form-horizontal" id="searchAppointmentsForm">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="applicationId">Application Id:</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="applicationIdInput" placeholder="Enter Application Id" maxlength="15" minlength="15" name="applicationId" required="required">
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="button" class="btn btn-info" id="searchAppointmentBtn">Search</button>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <hr/>
+  <br/>
+  <table class="table table-hover" id="AppointmentTableId" hidden="hidden">
+    <thead>
+      <tr>
+        <th>Appointment Id</th>
+        <th>Appointment Date</th>
+        <th>Department</th>
+        <th>type</th>
+        <th>Print</th>
+        <th>Cancel</th>
+      </tr>
+    </thead>
+    <tbody id="AppointmentsTableBody">
+      
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
